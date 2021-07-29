@@ -1,0 +1,28 @@
+Basaraba Razvan - 324CC
+
+Poduri:
+    Rezolvarea problemei se bazeaza pe algoritmul lui Lee. Am folosit
+o coada de perechi (pozitia si costul necesar sa se ajunga in pozitia
+aceea). Am adaugat in coada pozitia initiala a lui Gigel si costul 0.
+Apoi cat timp aveam elemente in coada si nu se ajungea inca la margine
+,luam primul element din coada si verificam daca acesta este pod orizontal,
+vertical sau dublu. Marcam directia curenta ca si vizitata, mergeam in
+functie de pod in toate directile posibile si daca nu era apa si eram
+inca in matrice(nu ajungeam la margine) adaugam in coada pozitia si costul
+potrivit. Algoritmul se termina daca se ajunge la margine, caz in care 
+returnam costul gasit, sau nu mai avem elemente in coada (returnam -1).
+    Complexitate temporala este n * m (citirea inputului + se adauga in
+coada in cazul cel mai defaorabil toate celulele din matrice).
+
+Adrese:
+    Pentru a vedea care sunt utilizatorii reali adaugam email-urile intr-un
+map (daca emailul deja exista in map adaugam legatura intre cei 2 users cu
+email-ul comun). Astfel. obtinem un graf in care fiecare compoinenta conexa
+o reprezinta un utilizator unic. Pentru fiecare componenta conexa, parcurgem
+lista de noduri (users) si adaugam intr-un set emailurile (care vor fi unice
+si sortate lexicografic). Ne creem un vector nou de users (realUsers) si
+adaugam fiecare users unic in acesta. Apoi, sortam vectorul dupa numarul de
+emailuri (iar daca acestea sunt egale lexicografic) si afisam raspunsul.
+    Complexitate:
+       n * k * log s, unde s = toate mailurile existente (adugarea in map)
+

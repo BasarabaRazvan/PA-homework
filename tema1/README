@@ -1,0 +1,49 @@
+Crypto:
+    Pentru aceasta problema am ales o rezolvare greedy. Mai
+intai am sortat crescator dupa numarul de monede pe care cele
+n calculatooare le pot mina inainte de upgrade => O(n * log^2 n)
+Apoi am parcurs vectorul, iar cat timp numarul de monede criptate
+era egal cu numarul de monede ale calculatorului care poate mina
+cel mai putin, adunam intr-o variabila suma costul fiecarui upgrade.
+Cand ajungeam la un calculator care putea mina mai mult, vedeam de
+cate ori trebuia sa upgradez pe cele dinainte astfel incat minimum sa
+devina calculatorul curent (deci verificam daca aveam suficienti
+bani, iar in caz ca nu upgradam doar cat se poate. Daca avem 
+suficienti bani, facem upgrade la calculatoare, scadem suma necesara
+de bani si actualizam minimum ca fiind elementul curent.)
+    Cum am facut o singura parcurgere si apoi doar niste verificari
+(O(1) fiecare) => O(n)
+
+Stocks:
+    Pentru aceasta problema am ales o rezolvare dinamica (am folosit
+algoritmul de la problema rucsacului). Daca aleg sa cumpar o anumita
+actiune, pretul ei trebuie sa se incadreze in suma de bani disponibili,
+si pierderea sa fie mai mica ca pierderea totala. Daca nu alegem sa
+cumparam nicio actiune atunci profitul maxim este 0 (cazul de baza).
+Daca alegem sa folosim obiectul curent, inseamna ca scadem suma de bani
+necesara cumaprarii lui, scadem din pierderea totala pierderea posibilla
+pentru acesta si adunam profitul. La final, selectam profitul maxim
+obtinut. => O(N * B * L) (cel mai rau caz).
+
+Valley:
+    Pentru aceasta problema am ales o rezolvare greedy. Am retinut in 
+2 vectori cat ar trebui sa excavez ca vectorul sa devina crescator,
+respectiv descrescator. Apoi am parcurs din nou si am ales sa adun La
+solutie minimum dintre fiecare element al celor 2 vectori astfel incat
+prefixul sa ramana descrescator si sufixul crescator (cand aveam doar 3
+munti, atunci trebuia ca muntele din mijloc sa fie excavat astfel incat
+sa fie mai mic decat ceilalti 2) => O(n)
+
+Ridge:
+    Pentru aceasta problema am ales o rezolvare dinamica. Am observat ca
+este suficient sa excavez maxim 2 unitati pentru ca oricare 2 munti adiacenti
+sa aiba o inaltime diferita. Astfel, in cazul de baza am retinut cat ar fi
+costul daca as excava 0,1 sau 2 unitati din primul munte. Am parcurs apoi
+vectorul cu ceilalti munti, si pentru fiecare munte vedeam cat ar trebui
+sa excavez ca acesta sa fie diferit fata de cel din stanga lui si sa aiba cost
+minim si actualizam vectorul de costuri. La final, alegem costul minim din
+vectorul nostru.
+    Cum parcurgem cu un singur for toti munti, (restul forurilor sunt O(3) care
+e constant). => O(n)
+    
+    
